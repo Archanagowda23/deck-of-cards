@@ -27,6 +27,16 @@ public class DeckOfCards {
             distributeOneCard(playerNumber);
         }
     }
+    public void display(int playerNumber) {
+        for (int suit = 0; suit < 4; suit++) {
+            for (int rank = 0; rank < 13; rank++) {
+                if (cards[suit][rank] == playerNumber) {
+                    System.out.print(getSuit(suit) + " " + getRank(rank) + "\t");
+                }
+            }
+        }
+        System.out.println("\n");
+    }
 
 
 
@@ -86,6 +96,7 @@ public class DeckOfCards {
         for (int playerNumber = 1; playerNumber <= 4; playerNumber++) {
             deckOfCards.distributeCards(playerNumber);
             System.out.println("Player" + playerNumber + "'s cards :");
+            deckOfCards.display(playerNumber);
 
         }
     }
